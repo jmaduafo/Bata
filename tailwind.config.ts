@@ -9,9 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#fff",
+        primaryMuted: "rgba(255, 255, 255, .10)",
+        primaryOutline: "rgba(255, 255, 255, .15)",
+        secondary: "#000",
+        accent: "#BEFFA7",
       },
+      backgroundImage: {
+        background: "linear-gradient(#316EE7, #5D6BE6)"
+      }
     },
   },
   plugins: [],
