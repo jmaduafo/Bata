@@ -1,11 +1,79 @@
-import React from 'react'
+"use client";
+import React from "react";
+import { easeIn, easeInOut, motion } from "framer-motion";
 
-function Socials({ text, link }: { text: string; link: string}) {
+function Socials({
+  text,
+  link,
+  index,
+}: {
+  text: string;
+  link: string;
+  index: number;
+}) {
+ const DURATION = 0.25
+ const DELAY = 0.015
+
   return (
-    <li className='py-2 px-5 rounded-full border-[1px] border-primary'>
-        <a href={link} target="_blank">{text}</a>        
+    <li className="py-1 px-5 rounded-full border-[1px] border-primary overflow-hidden">
+      <motion.a
+        initial="initial"
+        whileHover="hovered"
+        className="relative block whitespace-nowrap overflow-hidden"
+        href={link}
+        target="_blank"
+      >
+        <div>
+          {text.split("").map((letter, i) => {
+            return (
+              <motion.span
+                variants={{
+                  initial: {
+                    y: 0,
+                  },
+                  hovered: {
+                    y: "-100%",
+                    transition: {
+                      delay: i * DELAY,
+                      duration: DURATION
+                    },
+                  },
+                }}
+                key={`${letter}_${i}`}
+                className="inline-block"
+              >
+                {letter}
+              </motion.span>
+            );
+          })}
+        </div>
+        <div className="absolute inset-0">
+          {text.split("").map((letter, i) => {
+            return (
+              <motion.span
+                variants={{
+                  initial: {
+                    y: "100%",
+                  },
+                  hovered: {
+                    y: 0,
+                    transition: {
+                      delay: i * DELAY,
+                      duration: DURATION
+                    },
+                  },
+                }}
+                key={`${letter}_${i}`}
+                className="inline-block"
+              >
+                {letter}
+              </motion.span>
+            );
+          })}
+        </div>
+      </motion.a>
     </li>
-  )
+  );
 }
 
-export default Socials
+export default Socials;
