@@ -5,18 +5,71 @@ import Image from "next/image";
 import Logo from "../app/images/bata_logo.png";
 import MessageModal from "./MessageModal";
 import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
+import Loading from "./Loading";
 
 function Form() {
   const [message, setMessage] = useState<string | undefined>(undefined);
   const [isError, setIsError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  function handleSubmit(e: React.FormEvent) {
+  const [email, setEmail] = useState("");
+
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+
+    const formData = new FormData(e.target as HTMLFormElement);
+    const email = formData.get("user_email");
+
+    if (!email) {
+      setIsError(true);
+      setMessage("You must enter your email address before submission");
+      setTimeout(() => {
+        setMessage(undefined);
+      }, 5000);
+    } else {
+      setLoading(true);
+      try {
+        const response = await fetch("/api/subscribe", {
+          method: "POST",
+          body: formData,
+        });
+
+        if (!response.ok) {
+          setIsError(true);
+          setMessage(`Failed to send message.`);
+
+          setTimeout(function () {
+            setMessage(undefined);
+          }, 5000);
+        }
+
+        await response.json();
+
+        setIsError(false)
+        setMessage("Message successfully sent!");
+
+        // Just sets success string to an empty string after 5 seconds
+        setTimeout(function () {
+          setMessage(undefined);
+        }, 5000);
+        // Set all values to an empty string after message is sent successfully
+        setEmail("");
+      } catch (err: any) {
+        setIsError(true);
+        setMessage(err.message);
+
+        setTimeout(function () {
+          setMessage(undefined);
+        }, 5000);
+      }
+
+      setLoading(false);
+    }
   }
 
   return (
     <div className="">
-      <div className="w-[15vw] object-cover mx-auto">
+      <div className="w-[55%] object-cover mx-auto">
         <Image src={Logo} alt="logo" className="w-full h-full" />
       </div>
       <div className="w-[70%] mx-auto">
@@ -32,13 +85,17 @@ function Form() {
         <input
           placeholder="Email"
           type="email"
+          name="user_email"
           className="bg-transparent outline-none w-[90%] placeholder-[#ffffff60]"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <button
-          className="border-none bg-accent px-3 py-1 rounded-full hover:opacity-80 duration-300"
+          className={`${loading ? 'cursor-not-allowed' : 'cursor-pointer'} border-none bg-accent px-3 py-1 rounded-full hover:opacity-80 duration-300`}
           type="submit"
+          disabled={loading ?? false }
         >
-          <PaperAirplaneIcon className="w-5 text-secondary" />
+          {loading ? <Loading/> : <PaperAirplaneIcon className="w-5 text-secondary" />}
         </button>
       </form>
       {message ? (

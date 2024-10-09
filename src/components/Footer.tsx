@@ -20,13 +20,14 @@ function Footer() {
     //     link: ""
     // },
   ];
+  
   return (
     <div>
       <ul className="flex items-center gap-6">
         {links.map((link, i) => {
           return (
             <Fragment key={link.title}>
-              <Socials text={link.title} link={link.link} index={i} />
+              <Socials text={link.title} link={link.link} />
             </Fragment>
           );
         })}

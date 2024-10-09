@@ -1,15 +1,13 @@
 "use client";
 import React from "react";
-import { easeIn, easeInOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 function Socials({
   text,
   link,
-  index,
 }: {
   text: string;
   link: string;
-  index: number;
 }) {
  const DURATION = 0.25
  const DELAY = 0.015
