@@ -17,7 +17,7 @@ function MainPage() {
     initial: {
       scale: 0.8,
       opacity: 1,
-      rotateX: 0
+      rotateX: 0,
     },
     animate: {
       scale: 1,
@@ -33,7 +33,7 @@ function MainPage() {
       transformOrigin: "top",
       // opacity: 0,
       transition: {
-        duration: .8,
+        duration: 0.6,
         ease: primaryEasing,
       },
     },
@@ -43,7 +43,7 @@ function MainPage() {
     initial: {
       scale: 0.85,
       y: "5%",
-      opacity: .7,
+      opacity: 0.8,
       display: "none",
     },
     animate: {
@@ -53,14 +53,13 @@ function MainPage() {
       display: "block",
       transition: {
         ease: primaryEasing,
-        duration: 0.8,
-        delay: 0.8,
+        duration: 0.8
       },
     },
   };
 
   return (
-    <div className="h-full">
+    <div className="h-full relative">
       <AnimatePresence>
         {count > 0 && (
           <motion.section
@@ -68,9 +67,9 @@ function MainPage() {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="h-full flex items-end p-5 bg-black"
+            className="z-[10] origin-center absolute top-0 left-0 h-full w-screen bg-black flex items-end p-5"
           >
-            <div>
+            <div className="z-[8]">
               <Countdown count={count} setCount={setCount} />
             </div>
           </motion.section>
@@ -78,9 +77,9 @@ function MainPage() {
       </AnimatePresence>
       <motion.section
         variants={appear}
-        initial={count > 0 && "initial"}
+        initial={count > 5 && "initial"}
         animate={count === 0 && "animate"}
-        className="bg-background relative h-full"
+        className="bg-background relative h-full z-[0]"
       >
         <div className=" absolute bottom-0 left-0 w-[50vw] sm:w-[30vw] z-[0]">
           <Image src={SVG1} alt="bata squiggles" className="w-full" />

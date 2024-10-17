@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import Logo from "../app/images/bata_logo.png";
+import Logo from "../app/images/bataLogo2.png";
 import MessageModal from "./MessageModal";
 import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
 import Loading from "./Loading";
@@ -95,7 +95,7 @@ function Form() {
           type="submit"
           disabled={loading ?? false }
         >
-          {loading ? <Loading/> : <PaperAirplaneIcon className="w-5 text-secondary" />}
+          {loading ? <Loading/> : <PaperAirplaneIcon className="w-5 text-black" />}
         </button>
       </form>
       {message ? (

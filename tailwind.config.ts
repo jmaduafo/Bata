@@ -9,6 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // primary: "#f5e8e3",
         primary: "#fff",
         primaryMuted: "rgba(255, 255, 255, .10)",
         primaryOutline: "rgba(255, 255, 255, .15)",
