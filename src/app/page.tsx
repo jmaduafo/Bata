@@ -5,7 +5,7 @@ import MainPage from "@/components/MainPage";
 
 export default function Home() {
   return (
-    <main className="h-screen bg-background">
+    <main className="h-screen overflow-hidden bg-primary">
       <MainPage/>
     </main>
   );

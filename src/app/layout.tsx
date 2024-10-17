@@ -22,11 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${helvetica.className} text-primary`}
+        className={`${helvetica.className}`}
       >
-        <Presence>
           {children}
-        </Presence>
       </body>
     </html>
   );
