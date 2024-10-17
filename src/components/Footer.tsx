@@ -9,7 +9,7 @@ function Footer() {
     },
     {
       title: "TikTok",
-      link: "",
+      link: "https://www.tiktok.com/bataparty",
     },
   ];
   
