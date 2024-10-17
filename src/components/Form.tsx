@@ -74,7 +74,7 @@ function Form() {
       </div>
       <div className="w-[70%] mx-auto">
         <p className="text-center text-[13.5px] xs:text-[14.5px] lg:text-[16px]">
-          Subscribe to be the first to know when the party is about to start.
+          Subscribe to be the first to know when the party is about to start!
         </p>
       </div>
       <form
