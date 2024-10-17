@@ -73,9 +73,9 @@ function Form() {
         <Image src={Logo} alt="logo" className="w-full h-full" />
       </div>
       <div className="w-[70%] mx-auto">
-        <p className="text-center">
-          Keep up with all future updates by simply entering your email address
-          below!
+        <p className="text-center text-[13.5px] xs:text-[14.5px] lg:text-[16px]">
+          You're invited to the people's party. Sign up
+          below so when can let you know when the party is about to start.
         </p>
       </div>
       <form

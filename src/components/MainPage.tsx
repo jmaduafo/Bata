@@ -15,7 +15,7 @@ function MainPage() {
 
   const slide = {
     initial: {
-      scale: 0.8,
+      scale: 0.9,
       opacity: 1,
       rotateX: 0,
     },
@@ -87,7 +87,7 @@ function MainPage() {
         <div className="absolute top-0 right-0 w-[50vw] sm:w-[30vw] z-[0]">
           <Image src={SVG2} alt="bata squiggles" className="w-full" />
         </div>
-        <div className="z-[1] h-full flex flex-col items-center py-8 w-[95%] xs:w-[80%] sm:w-[65%] lg:w-[60%] xl:w-[50%] mx-auto">
+        <div className="z-[1] h-full flex flex-col items-center py-8 w-[95%] xs:w-[80%] sm:w-[65%] lg:w-[60%] xl:w-[40%] mx-auto">
           <div className="mt-auto">
             <Form />
           </div>

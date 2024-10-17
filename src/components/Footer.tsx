@@ -5,20 +5,12 @@ function Footer() {
   const links = [
     {
       title: "Instagram",
-      link: "",
+      link: "https://www.instagram.com/bataparty",
     },
     {
       title: "TikTok",
       link: "",
     },
-    {
-      title: "Facebook",
-      link: "",
-    },
-    // {
-    //     title: "",
-    //     link: ""
-    // },
   ];
   
   return (
