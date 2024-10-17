@@ -1,5 +1,5 @@
 import { transporter } from "@/nodemailer/config";
-import { NextResponse, NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 
 export async function POST(request: any) {
   const my_email = process.env.NEXT_PUBLIC_EMAIL;

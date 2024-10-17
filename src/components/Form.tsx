@@ -74,7 +74,7 @@ function Form() {
       </div>
       <div className="w-[70%] mx-auto">
         <p className="text-center text-[13.5px] xs:text-[14.5px] lg:text-[16px]">
-          You're invited to the people's party. Sign up
+          You&apos;re invited to the people&apos;s party. Sign up
           below so when can let you know when the party is about to start.
         </p>
       </div>

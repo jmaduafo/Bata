@@ -9,7 +9,7 @@ type Count = {
 function Countdown({ count, setCount}: Count) {
 
   useEffect(() => {
-    let timer = setInterval(() => {
+    const timer = setInterval(() => {
       setCount((prev) => {
         if (prev === 0) {
           clearInterval(timer);

@@ -16,7 +16,7 @@ function Footer() {
   return (
     <div className="">
       <ul className="flex items-center flex-wrap justify-center gap-x-6 gap-y-3">
-        {links.map((link, i) => {
+        {links.map((link) => {
           return (
             <Fragment key={link.title}>
               <Socials text={link.title} link={link.link} />
