@@ -13,7 +13,7 @@ function Socials({
  const DELAY = 0.015
 
   return (
-    <li className="py-1 px-5 rounded-full border-[1px] border-primary overflow-hidden">
+    <li className="z-[3] py-1 px-5 rounded-full border-[1px] border-primary overflow-hidden">
       <motion.a
         initial="initial"
         whileHover="hovered"

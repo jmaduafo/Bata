@@ -22,8 +22,8 @@ function Footer() {
   ];
   
   return (
-    <div>
-      <ul className="flex items-center gap-6">
+    <div className="">
+      <ul className="flex items-center flex-wrap justify-center gap-x-6 gap-y-3">
         {links.map((link, i) => {
           return (
             <Fragment key={link.title}>
@@ -33,7 +33,7 @@ function Footer() {
         })}
       </ul>
       <div className="flex justify-center items-center mt-4">
-        <p className="text-[13px]">Organized by</p>
+        <p className="text-[13px] z-[3]">Organized by</p>
       </div>
     </div>
   );

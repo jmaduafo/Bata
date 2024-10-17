@@ -68,7 +68,7 @@ function Form() {
   }
 
   return (
-    <div className="">
+    <div className="mb-[6vw]">
       <div className="w-[55%] object-cover mx-auto">
         <Image src={Logo} alt="logo" className="w-full h-full" />
       </div>
@@ -80,7 +80,7 @@ function Form() {
       </div>
       <form
         onSubmit={handleSubmit}
-        className="mt-4 flex items-center justify-between gap-3 border-b-[1.5px] border-b-primary px-4 py-2"
+        className="z-[3] mt-4 flex items-center justify-between gap-3 border-b-[1.5px] border-b-primary px-4 py-2"
       >
         <input
           placeholder="Email"
