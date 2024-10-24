@@ -1,43 +1,41 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Form from "./Form";
 import Footer from "./Footer";
-import Countdown from "./Countdown";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import SVG1 from "@/app/images/Bata squigles 1.svg";
 import SVG2 from "@/app/images/Bata squigles 2.svg";
 import Image from "next/image";
 
 function MainPage() {
-  const [count, setCount] = useState(10);
-
+  
   const primaryEasing = [0.83, 0, 0.17, 1];
 
-  const slide = {
-    initial: {
-      scale: 0.9,
-      opacity: 1,
-      rotateX: 0,
-    },
-    animate: {
-      scale: 1,
-      opacity: 1,
-      rotateX: 0,
-      transition: {
-        ease: primaryEasing,
-        duration: 0.7,
-      },
-    },
-    exit: {
-      scaleY: 0,
-      transformOrigin: "top",
-      // opacity: 0,
-      transition: {
-        duration: 0.6,
-        ease: primaryEasing,
-      },
-    },
-  };
+  // const slide = {
+  //   initial: {
+  //     scale: 0.9,
+  //     opacity: 1,
+  //     rotateX: 0,
+  //   },
+  //   animate: {
+  //     scale: 1,
+  //     opacity: 1,
+  //     rotateX: 0,
+  //     transition: {
+  //       ease: primaryEasing,
+  //       duration: 0.7,
+  //     },
+  //   },
+  //   exit: {
+  //     scaleY: 0,
+  //     transformOrigin: "top",
+  //     // opacity: 0,
+  //     transition: {
+  //       duration: 0.6,
+  //       ease: primaryEasing,
+  //     },
+  //   },
+  // };
 
   const appear = {
     initial: {
