@@ -42,25 +42,25 @@ function MainPage() {
   const appear = {
     initial: {
       scale: 0.85,
-      y: "5%",
+      // y: "5%",
       opacity: 0.8,
-      display: "none",
+      // display: "none",
     },
     animate: {
       scale: 1,
       opacity: 1,
-      y: 0,
-      display: "block",
+      // y: 0,
+      // display: "block",
       transition: {
         ease: primaryEasing,
-        duration: 0.8
+        duration: 0.4
       },
     },
   };
 
   return (
     <div className="h-full relative">
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {count > 0 && (
           <motion.section
             variants={slide}
@@ -74,11 +74,13 @@ function MainPage() {
             </div>
           </motion.section>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
       <motion.section
         variants={appear}
-        initial={count > 5 && "initial"}
-        animate={count === 0 && "animate"}
+        // initial={count > 5 && "initial"}
+        initial={"initial"}
+        // animate={count === 0 && "animate"}
+        animate={"animate"}
         className="bg-background relative h-full z-[0]"
       >
         <div className=" absolute bottom-0 left-0 w-[50vw] sm:w-[30vw] z-[0]">
